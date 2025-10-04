@@ -6,9 +6,10 @@
     "start": "vercel dev"
   },
   "dependencies": {
-    "express": "^5.1.0",
     "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "form-data": "^4.0.0",
     "multer": "^1.4.5-lts.1",
-    "form-data": "^4.0.0"
+    "streamifier": "^0.1.1"
   }
 }
