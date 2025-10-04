@@ -16,8 +16,14 @@ app.get("/api/upload", (req, res) => {
 
 // ✅ Root route (for testing directly)
 app.get("/", (req, res) => {
-  res.send("GlowX File Uploader is Live 🚀");
+  res.send("GlowX File Uploader is Live 💫");
 });
 
-// Vercel export
+// 🟩 Local testing only
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+}
+
+// 🟩 Export for Vercel
 export default app;
