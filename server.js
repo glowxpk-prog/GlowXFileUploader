@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -14,16 +15,10 @@ app.get("/api/upload", (req, res) => {
   });
 });
 
-// ✅ Root route (for testing directly)
+// ✅ Root route (for testing)
 app.get("/", (req, res) => {
-  res.send("GlowX File Uploader is Live 💫");
+  res.send("GlowX File Uploader is Live 💞");
 });
 
-// 🟩 Local testing only
-if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
-}
-
-// 🟩 Export for Vercel
+// ✅ Export handler for Vercel (this is critical)
 export default app;
